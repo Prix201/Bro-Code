@@ -1,0 +1,219 @@
+Given below is the context-free grammer used by the Compiler for compiling Python 3.8(src:https://docs.python.org/3.8/reference/grammar.html)
+
+
+**File : The tree root node
+file :          stmts                               
+
+stmts :         stmts stmt                          
+|               stmt                                
+
+stmt :          compound_stmt                      
+|               simple_stmt                       
+|               NEWLINE                           
+
+compound_stmt : if_stmt 
+|               while_stmt 
+|               for_stmt 
+|               funcdef 
+|               classdef 
+
+simple_stmt :   expr_stmt                                   
+|               flow_stmt                                   
+
+if_stmt :       IF test COLON suite elif_stmts else_stmt    
+|               IF test COLON suite else_stmt
+|               IF test COLON suite elif_stmts
+|               IF test COLON suite
+
+elif_stmts :    ELIF test COLON suite
+|               elif_stmts ELIF test COLON suite
+
+else_stmt :     ELSE COLON suite
+
+
+while_stmt :    WHILE test COLON suite else_stmt
+|               WHILE test COLON suite
+
+for_stmt :      FOR NAME IN RANGE rangelist COLON suite
+
+
+rangelist :     OPEN_BRACKET CLOSE_BRACKET
+|               OPEN_BRACKET expr CLOSE_BRACKET
+|               OPEN_BRACKET expr COMMA expr CLOSE_BRACKET
+|               OPEN_BRACKET expr COMMA expr COMMA expr CLOSE_BRACKET
+
+
+
+funcdef :       DEF NAME parameters GOTO test COLON suite
+|               DEF NAME parameters COLON suite
+
+parameters:     OPEN_BRACKET typedarglist CLOSE_BRACKET 
+|               OPEN_BRACKET CLOSE_BRACKET
+
+typedarglist:   tfpdef
+|               typedarglist COMMA tfpdef 
+
+tfpdef:         NAME 
+|               NAME COLON test 
+
+classdef :      CLASS NAME OPEN_BRACKET arglist CLOSE_BRACKET COLON suite
+|               CLASS NAME OPEN_BRACKET CLOSE_BRACKET COLON suite
+|               CLASS NAME COLON suite
+
+expr_stmt :     testlist
+|               testlist annassign
+|               testlist augassign testlist
+|               testlist something
+
+annassign:      COLON test 
+|               COLON test equal testlist
+augassign:      add_eq 
+|               minus_eq 
+|               mult_eq 
+|               div_eq 
+|               mod_eq 
+|               and_eq 
+|               xor_eq 
+|               lshift_eq 
+|               rshift_eq 
+|               pow_eq 
+|               concat_eq
+|               random_eq
+
+something :     something equal testlist
+|               equal testlist
+
+suite :         NEWLINE INDENT stmts DEDENT
+|               simple_stmt
+
+flow_stmt :     BREAK
+|               CONTINUE
+|               RETURN  
+
+test: or_test   IF or_test ELSE test 
+|               or_test 
+
+or_test:        and_test
+|               and_test and_tests 
+
+and_tests :     and_tests or_token and_test 
+|               or_token and_test 
+
+and_test:       not_test 
+|               not_test not_tests 
+not_tests :     not_tests and_token not_test 
+|               and_token not_test
+
+not_test :      not_token not_test
+|               comparison 
+
+
+comparison :    expr  
+|               expr exprs 
+exprs :         exprs comp_op expr 
+|               comp_op expr 
+
+comp_op:        lt_rel
+|               gt_rel
+|               geq_rel
+|               leq_rel
+|               eq_rel
+|               neq_rel
+|               IN
+|               not_token IN
+
+expr:           xor_expr 
+|               xor_expr xor_exprs
+xor_exprs :     xor_exprs or_op xor_expr 
+|               or_op xor_expr 
+
+xor_expr:       and_expr 
+|               and_expr and_exprs
+and_exprs :     and_exprs xor_op and_expr 
+|               xor_op and_expr
+
+and_expr:       shift_expr 
+|               shift_expr shift_exprs
+shift_exprs:    shift_exprs and_op shift_expr 
+|               and_op shift_expr
+
+
+shift_expr:     arith_expr 
+|               arith_expr arith_exprs
+arith_exprs :   arith_exprs shift_op arith_expr
+|               shift_op arith_expr 
+shift_op :      lshift_op
+|               rshift_op
+arith_expr:     term 
+|               term add_minus_term
+add_minus_term : add_minus_term add_minus term
+|               add_minus term
+add_minus :     PLUS 
+|               MINUS
+
+term:           factor
+|               factor ops_factor
+ops_factor :    ops_factor ops factor 
+|               ops factor
+ops :           MULTIPLY
+|               POW
+|               AT_THE_RATE
+|               DIVIDE
+|               MODULO
+|               concat
+
+factor:         ops2 factor 
+|               power
+ops2 :          PLUS
+|               MINUS
+|               nor_op
+
+power:          atom_expr
+|               atom_expr power factor
+
+atom_expr:      atom trailers 
+|               atom 
+trailers :      trailers trailer 
+|               trailer
+atom:           OPEN_BRACKET testlist CLOSE_BRACKET
+|               OPEN_BRACKET CLOSE_BRACKET
+|               OPEN_SQUARE_BRACKET testlist CLOSE_SQUARE_BRACKET
+|               NAME 
+|               INT
+|               FLOAT 
+|               STRINGS
+|               NONE
+|               TRUE_T
+|               FALSE_T
+|               INT_NAME
+|               FLOAT_NAME
+|               STRING_NAME
+|               not_token
+
+trailer:        OPEN_BRACKET arglist CLOSE_BRACKET
+|               OPEN_BRACKET CLOSE_BRACKET
+|               OPEN_SQUARE_BRACKET subscriptlist CLOSE_SQUARE_BRACKET 
+|               FULLSTOP NAME
+
+arglist:        argument
+|               argument arguments  COMMA 
+|               argument COMMA 
+|               argument arguments
+
+arguments :     arguments COMMA argument 
+|               COMMA argument
+
+argument:       test 
+|               test equal test
+
+
+subscriptlist : test
+|               test COLON test
+|               test COLON
+
+testlist :      testlist COMMA test 
+|               test
+
+STRINGS :       STRINGS STRING 
+|               STRING
+
