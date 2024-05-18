@@ -1,0 +1,19 @@
+def fibonacci(n:sankhya)->sankhya:
+    agar_ye n == 1:
+        vapis_kro 1
+    vrna_ye n == 2:
+        vapis_kro 1
+    nhi_to :
+        vapis_kro fibonacci(n-1) + fibonacci(n-2)
+
+
+def main():
+    j:sankhya = 1
+
+    jb_tk j < 5000000:
+        print(j)
+        j += 1
+
+
+agar_ye __name__ == "__main__":
+    main()
