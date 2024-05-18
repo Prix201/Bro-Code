@@ -21,6 +21,10 @@ This is a python based compiler created for the CS335 Course Project (IIT Kanpur
    ```bash
    sudo apt install graphviz
 
+- Lasm Assembler:
+   ```bash
+   sudo apt install lasm
+
 ### Installation
 
 1. Clone the repository using gitlab's VS Code functionality.
@@ -37,5 +41,5 @@ This is a python based compiler created for the CS335 Course Project (IIT Kanpur
 
 ### Results:
 
-1. You get the output in .pdf format named "output.pdf"
+1. You get the output on the terminal and all the backstory in outputs directory
 
