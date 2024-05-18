@@ -1,0 +1,10 @@
+GLOBAL_SYMBOL_TABLE:
+
+0|fibonacci|0->7->7->14->|int|
+1|main|9->19->|void|
+
+fibonacci:
+0|n|0->2->4->7->7->|int|i1
+
+main:
+0|j|12->13->14->19->|int|i15

@@ -1,0 +1,75 @@
+main:
+beginfunc
+i1 = 1489
+i2 = 13489
+i3 = 24039
+i4 = 1309490
+i5 = 1343
+i6 = 14
+i7 = 32134
+i8 = 3143
+i9 = 3134
+i10 = 34134
+i11 = 34134
+i12 = 4134
+i13 = 143
+i14 = 3143
+i15 = 3134
+i16 = 3313
+i17 = 4133
+i18 = 41343
+i19 = 34134
+i20 = 4313
+i21 = [i1]
+i22 = 20
+i22 = i22
+i23 = 0
+i23 = i23
+goto L_1
+L_1:
+i24 = i23 < i22
+i25 = 1
+i26 = i24 != i25
+if i26 == False goto L_2
+i27 = 1
+i28 = i23 + i27
+i28 = i28
+goto L_3
+L_3:
+i29 = i28 < i22
+if i29 == False goto L_4
+i30 = i21 [i23]
+i31 = i21 [i28]
+i32 = i30 > i31
+if i32 == False goto L_5
+i33 = i21 [i23]
+i33 = i33
+i34 = i21 [i28]
+i21 [i23] = i34
+i21 [i28] = i33
+goto L_5
+L_5:
+i35 = 1
+i28 = i28 + i35
+goto L_3
+L_4:
+i36 = 1
+i23 = i23 + i36
+goto L_1
+L_2:
+i37 = 0
+i23 = i37
+goto L_6
+L_6:
+i38 = i23 < i22
+if i38 == False goto L_7
+i39 = i21 [i23]
+print i39
+i40 = 1
+i23 = i23 + i40
+goto L_6
+L_7:
+endfunc
+stackpointer +
+call main
+stackpointer -

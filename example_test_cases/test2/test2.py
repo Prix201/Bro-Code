@@ -1,0 +1,30 @@
+def main():
+#Bubble_sort
+    array:list[int] = [1489,13489,24039,1309490,1343,14,32134,3143,3134,34134,34134,4134,143,3143,3134,3313,4133,41343,34134,4313]
+    n:int = len(array)
+
+
+
+    i:int = 0
+    while i < n:
+        j:int = i+1
+        while j < n:
+            if array[i] > array[j]:
+                temp:int = array[i]
+                array[i] = array[j]
+                array[j] = temp
+            j+=1
+        i+=1
+
+
+    i = 0
+    while i < n:
+        print(array[i])
+        i += 1
+
+
+
+
+
+if __name__ == "__main__":
+    main()

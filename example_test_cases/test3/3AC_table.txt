@@ -1,0 +1,114 @@
+maximum_list:
+beginfunc
+pop i1
+pop i2
+i3 = 0
+i3 = i3
+i4 = 0
+i4 = i4
+goto L_1
+L_1:
+i5 = i3 < i2
+if i5 == False goto L_2
+i6 = i1 [i3]
+i7 = i4 < i6
+if i7 == False goto L_3
+i8 = i1 [i3]
+i4 = i8
+goto L_3
+L_3:
+i9 = 1
+i3 = i3 + i9
+goto L_1
+L_2:
+push i4
+return
+endfunc
+minimum_list:
+beginfunc
+pop i10
+pop i11
+i12 = 0
+i12 = i12
+i13 = 0
+i13 = i13
+goto L_4
+L_4:
+i14 = i12 < i11
+if i14 == False goto L_5
+i15 = i10 [i12]
+i16 = i13 > i15
+if i16 == False goto L_6
+i17 = i10 [i12]
+i13 = i17
+goto L_6
+L_6:
+i18 = 1
+i12 = i12 + i18
+goto L_4
+L_5:
+push i13
+return
+endfunc
+mean_list:
+beginfunc
+pop i19
+pop i20
+i21 = 0
+i21 = i21
+i22 = 0
+i22 = i22
+goto L_7
+L_7:
+i23 = i22 < i20
+if i23 == False goto L_8
+i24 = i19 [i22]
+i21 = i21 + i24
+i25 = 1
+i22 = i22 + i25
+goto L_7
+L_8:
+i26 = i21 / i20
+push i26
+return
+endfunc
+main:
+beginfunc
+i27 = 1
+i28 = 2
+i29 = 3
+i30 = 4
+i31 = 5
+i32 = 6
+i33 = 7
+i34 = 8
+i35 = 9
+i36 = 10
+i37 = [i27]
+i38 = 10
+i38 = i38
+stackpointer +
+param i38
+param i37
+call maximum_list
+stackpointer -
+i39 = popparam
+print i39
+stackpointer +
+param i38
+param i37
+call minimum_list
+stackpointer -
+i40 = popparam
+print i40
+stackpointer +
+param i38
+param i37
+call mean_list
+stackpointer -
+i41 = popparam
+print i41
+endfunc
+stackpointer +
+call main
+stackpointer -

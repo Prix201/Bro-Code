@@ -1,0 +1,59 @@
+fibonacci:
+beginfunc
+pop i1
+i2 = 1
+i3 = i1 == i2
+if i3 == False goto L_1
+i4 = 1
+push i4
+return
+goto L_2
+L_1:
+i5 = 2
+i6 = i1 == i5
+if i6 == False goto L_2
+i7 = 1
+push i7
+return
+goto L_2
+L_2:
+stackpointer +
+i8 = 1
+i9 = i1 - i8
+param i9
+call fibonacci
+stackpointer -
+i10 = popparam
+stackpointer +
+i11 = 2
+i12 = i1 - i11
+param i12
+call fibonacci
+stackpointer -
+i13 = popparam
+i14 = i10 + i13
+push i14
+return
+endfunc
+main:
+beginfunc
+i15 = 1
+goto L_3
+L_3:
+i16 = 40
+i17 = i15 < i16
+if i17 == False goto L_4
+stackpointer +
+param i15
+call fibonacci
+stackpointer -
+i18 = popparam
+print i18
+i19 = 1
+i15 = i15 + i19
+goto L_3
+L_4:
+endfunc
+stackpointer +
+call main
+stackpointer -
