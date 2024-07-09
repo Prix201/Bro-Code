@@ -3,7 +3,7 @@
 2. outputs return the Abstract syntax Tree,Machine Language Code and the symbol table formed by your code  
 
 # if statements
-    '''bash
+    '''python
     agar_ye condition :
         body
     vrna_ye condition :
@@ -12,12 +12,12 @@
         body
 
 # while loop
-    '''bash
+    '''python
     jb_tk condition:
         body
 
 # function
-    '''bash
+    '''python
     def function_name(a:int,more_param)->int:
         body
         vapis_kro return_val
