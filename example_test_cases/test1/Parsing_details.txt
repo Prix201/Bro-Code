@@ -1,0 +1,12 @@
+FLOW_STMT FORMED in line : 4
+FLOW_STMT FORMED in line : 7
+IF_STMT FORMED in line : 7
+FLOW_STMT FORMED in line : 10
+FUNC FORMED in line : 10
+EXPR_STMT FORMED in line : 13
+PRINT_STMT FORMED in line : 15
+EXPR_STMT FORMED in line : 18
+WHILE_STMT FORMED in line : 18
+FUNC FORMED in line : 18
+EXPR_STMT FORMED in line : 20
+IF_STMT FORMED in line : 20

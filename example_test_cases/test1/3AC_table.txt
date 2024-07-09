@@ -38,9 +38,10 @@ endfunc
 main:
 beginfunc
 i15 = 1
+i15 = i15
 goto L_3
 L_3:
-i16 = 40
+i16 = 50
 i17 = i15 < i16
 if i17 == False goto L_4
 stackpointer +

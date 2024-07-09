@@ -6,10 +6,10 @@ def main():
 
 
     i:int = 0
-    while i < n:
+    jb_tk i < n:
         j:int = i+1
-        while j < n:
-            if array[i] > array[j]:
+        jb_tk j < n:
+            agar_ye array[i] > array[j]:
                 temp:int = array[i]
                 array[i] = array[j]
                 array[j] = temp
@@ -18,7 +18,7 @@ def main():
 
 
     i = 0
-    while i < n:
+    jb_tk i < n:
         print(array[i])
         i += 1
 

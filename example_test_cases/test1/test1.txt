@@ -1,0 +1,19 @@
+def fibonacci(n:int)->int:
+    agar_ye n == 1:
+        vapis_kro 1
+    vrna_ye n == 2:
+        vapis_kro 1
+
+    vapis_kro fibonacci(n-1) + fibonacci(n-2)
+
+
+def main():
+    j:int = 1
+
+    jb_tk j < 50:
+        print(fibonacci(j))
+        j += 1
+
+
+agar_ye __name__ == "__main__":
+    main()

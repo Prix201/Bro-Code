@@ -40,8 +40,6 @@ section .data
 	i37 dd 0,0
 	i38 dd 0,0
 	i39 dd 0,0
-	i40 dd 0,0
-	i41 dd 0,0
 	stack_pointer dd 0,0
 
 section .bss
@@ -88,57 +86,55 @@ main:
 	jmp L_1
 L_1:
 	less_than i24,i23,i22
-	set_int i25,1
-	set_int i25,1
-	mov rax,[i26]
+	mov rax,[i24]
 	mov rbx,0
 	cmp rax,rbx
 	je L_2
-	set_int i27,1
-	add_int i28,i23,i27
-	set_int_from_register i28,i28
+	set_int i25,1
+	add_int i26,i23,i25
+	set_int_from_register i26,i26
 	jmp L_3
 L_3:
-	less_than i29,i28,i22
-	mov rax,[i29]
+	less_than i27,i26,i22
+	mov rax,[i27]
 	mov rbx,0
 	cmp rax,rbx
 	je L_4
-	access_list i30,i21,i23
-	access_list i31,i21,i28
-	greater_than i32,i30,i31
-	mov rax,[i32]
+	access_list i28,i21,i23
+	access_list i29,i21,i26
+	greater_than i30,i28,i29
+	mov rax,[i30]
 	mov rbx,0
 	cmp rax,rbx
 	je L_5
-	access_list i33,i21,i23
-	set_int_from_register i33,i33
-	access_list i34,i21,i28
-	set_val_at_pointer i21,i23,i34
-	set_val_at_pointer i21,i28,i33
+	access_list i31,i21,i23
+	set_int_from_register i31,i31
+	access_list i32,i21,i26
+	set_val_at_pointer i21,i23,i32
+	set_val_at_pointer i21,i26,i31
 	jmp L_5
 L_5:
-	set_int i35,1
-	add_int i28,i28,i35
+	set_int i33,1
+	add_int i26,i26,i33
 	jmp L_3
 L_4:
-	set_int i36,1
-	add_int i23,i23,i36
+	set_int i34,1
+	add_int i23,i23,i34
 	jmp L_1
 L_2:
-	set_int i37,0
-	set_int_from_register i23,i37
+	set_int i35,0
+	set_int_from_register i23,i35
 	jmp L_6
 L_6:
-	less_than i38,i23,i22
-	mov rax,[i38]
+	less_than i36,i23,i22
+	mov rax,[i36]
 	mov rbx,0
 	cmp rax,rbx
 	je L_7
-	access_list i39,i21,i23
-	print_int [i39]
-	set_int i40,1
-	add_int i23,i23,i40
+	access_list i37,i21,i23
+	print_int [i37]
+	set_int i38,1
+	add_int i23,i23,i38
 	jmp L_6
 L_7:
 	pop rbp
@@ -184,13 +180,9 @@ popping_algo:
 	pop_stack stack,stack_pointer,i37
 	pop_stack stack,stack_pointer,i38
 	pop_stack stack,stack_pointer,i39
-	pop_stack stack,stack_pointer,i40
-	pop_stack stack,stack_pointer,i41
 	ret
 
 pushing_algo:
-	push_stack stack,stack_pointer,i41
-	push_stack stack,stack_pointer,i40
 	push_stack stack,stack_pointer,i39
 	push_stack stack,stack_pointer,i38
 	push_stack stack,stack_pointer,i37

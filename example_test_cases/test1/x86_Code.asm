@@ -86,9 +86,10 @@ main:
 	push rbp
 	mov rbp,rsp
 	set_int i15,1
+	set_int_from_register i15,i15
 	jmp L_3
 L_3:
-	set_int i16,10
+	set_int i16,50
 	less_than i17,i15,i16
 	mov rax,[i17]
 	mov rbx,0

@@ -202,7 +202,7 @@
 "Flase" {return FALSE_T;}
 "->" {return GOTO;}
 "float" {return FLOAT_NAME;}
-"sankhya" {return INT_NAME;}
+"int" {return INT_NAME;}
 "string" {return STRING_NAME;}
 "list"[ ]*"[int]" {return list_int;}
 "list"[ ]*"[float]" {return list_float;}

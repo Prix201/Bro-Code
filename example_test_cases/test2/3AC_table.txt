@@ -28,45 +28,43 @@ i23 = i23
 goto L_1
 L_1:
 i24 = i23 < i22
+if i24 == False goto L_2
 i25 = 1
-i26 = i24 != i25
-if i26 == False goto L_2
-i27 = 1
-i28 = i23 + i27
-i28 = i28
+i26 = i23 + i25
+i26 = i26
 goto L_3
 L_3:
-i29 = i28 < i22
-if i29 == False goto L_4
-i30 = i21 [i23]
-i31 = i21 [i28]
-i32 = i30 > i31
-if i32 == False goto L_5
-i33 = i21 [i23]
-i33 = i33
-i34 = i21 [i28]
-i21 [i23] = i34
-i21 [i28] = i33
+i27 = i26 < i22
+if i27 == False goto L_4
+i28 = i21 [i23]
+i29 = i21 [i26]
+i30 = i28 > i29
+if i30 == False goto L_5
+i31 = i21 [i23]
+i31 = i31
+i32 = i21 [i26]
+i21 [i23] = i32
+i21 [i26] = i31
 goto L_5
 L_5:
-i35 = 1
-i28 = i28 + i35
+i33 = 1
+i26 = i26 + i33
 goto L_3
 L_4:
-i36 = 1
-i23 = i23 + i36
+i34 = 1
+i23 = i23 + i34
 goto L_1
 L_2:
-i37 = 0
-i23 = i37
+i35 = 0
+i23 = i35
 goto L_6
 L_6:
-i38 = i23 < i22
-if i38 == False goto L_7
-i39 = i21 [i23]
-print i39
-i40 = 1
-i23 = i23 + i40
+i36 = i23 < i22
+if i36 == False goto L_7
+i37 = i21 [i23]
+print i37
+i38 = 1
+i23 = i23 + i38
 goto L_6
 L_7:
 endfunc
