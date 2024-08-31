@@ -9,22 +9,28 @@ Please refer to the user manual
 - VS Code Installation:
    ```bash
    sudo apt install vscode
+   ```
 - GCC compiler Installation:
    ```bash
    sudo apt install gcc
+   ```
 - Flex specification Installation:
    ```bash
    sudo apt install Flex
+   ```
 - Bison specification Installation:
    ```bash
    sudo apt install bison
+   ```
 - GraphViz Tool Installation:
    ```bash
    sudo apt install graphviz
+   ```
 
 - Lasm Assembler:
    ```bash
    sudo apt install lasm
+   ```
 
 ### Installation
 
@@ -39,6 +45,7 @@ Please refer to the user manual
    cd src
    chmod +x run.sh
    ./run.sh
+   ```
 
 ### Results:
 
